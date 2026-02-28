@@ -178,69 +178,46 @@ section,
 
 /* ═══════════════════════════════
    RESPONSIVE — TABLET (max 1024px)
-═══════════════════════════════ */
+   ═══════════════════════════════ */
 @media (max-width: 1024px) {
-  .hero {
-    padding: 0 6vw;
-  }
 
-  .hero-name {
-    font-size: clamp(3.5rem, 9vw, 7rem);
-  }
-
-  .ship-wrap {
-    right: 4vw;
-    bottom: 20vh;
-  }
-
-  .ship {
-    font-size: 4rem;
-  }
-
-  .about {
-    padding: 100px 6vw;
-  }
-
-  .logbook {
-    grid-template-columns: 180px 1fr;
-    gap: 48px;
-  }
-
-  .skills {
-    padding: 100px 6vw;
-  }
-
-  .projects {
-    padding: 100px 6vw;
-  }
-
+  .hero,
+  .about,
+  .skills,
+  .projects,
   .contact {
-    padding: 100px 6vw;
-  }
-
-  .islands-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .arcs-grid {
-    grid-template-columns: repeat(2, 1fr);
+    padding-left: 6vw;
+    padding-right: 6vw;
   }
 
   .navbar {
     padding: 20px 40px;
   }
-
-  .nav-links {
-    gap: 28px;
-  }
 }
 
 /* ═══════════════════════════════
    RESPONSIVE — MOBILE (max 768px)
-═══════════════════════════════ */
+   ═══════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* ── NAVBAR ── */
+  .hero,
+  .about,
+  .skills,
+  .projects,
+  .contact {
+    padding: 80px 24px;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    margin-bottom: 32px;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+  }
+
   .navbar {
     padding: 18px 24px;
   }
@@ -248,373 +225,22 @@ section,
   .nav-links {
     display: none;
   }
-
-  /* hidden on mobile — use compass instead */
-
-  /* ── HERO ── */
-  .hero {
-    padding: 0 6vw;
-    align-items: flex-start;
-    padding-top: 120px;
-  }
-
-  .hero-name {
-    font-size: clamp(3rem, 14vw, 5rem);
-  }
-
-  .hero-role {
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-  }
-
-  .hero-quote {
-    font-size: 0.9rem;
-  }
-
-  .ship-wrap {
-    right: 6vw;
-    bottom: 30vh;
-  }
-
-  .ship {
-    font-size: 3rem;
-  }
-
-  .hero-stats {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .stat-line {
-    display: none;
-  }
-
-  .hero-btns {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .hero-btns .btn {
-    text-align: center;
-    width: 100%;
-  }
-
-  .intro-lines {
-    padding: 0 6vw;
-    gap: 24px;
-  }
-
-  .line-welcome {
-    font-size: clamp(1.4rem, 7vw, 2.2rem);
-    letter-spacing: 4px;
-  }
-
-  /* ── ABOUT ── */
-  .about {
-    padding: 80px 6vw;
-  }
-
-  .logbook {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .logbook-cover {
-    max-width: 200px;
-    margin: 0 auto;
-  }
-
-  .wanted-mini {
-    margin: 0 auto;
-  }
-
-  /* ── SKILLS ── */
-  .skills {
-    padding: 80px 6vw;
-  }
-
-  .islands-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .island-card {
-    height: 240px;
-  }
-
-  /* ── PROJECTS ── */
-  .projects {
-    padding: 80px 6vw;
-  }
-
-  .arcs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* ── QUOTE BANNER ── */
-  .quote-banner {
-    padding: 48px 6vw;
-  }
-
-  .quote-text {
-    font-size: 1rem;
-  }
-
-  .quote-line {
-    display: none;
-  }
-
-  /* ── CONTACT ── */
-  .contact {
-    padding: 80px 6vw;
-  }
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  /* ── COMPASS ── */
-  .compass-btn {
-    bottom: 24px;
-    right: 24px;
-  }
-
-  .island-map {
-    right: 24px;
-    bottom: 96px;
-    min-width: 200px;
-  }
-
-  /* ── SECTION TITLES ── */
-  .section-title {
-    font-size: clamp(2rem, 8vw, 3rem);
-    margin-bottom: 32px;
-  }
 }
 
 /* ═══════════════════════════════
    RESPONSIVE — SMALL (max 480px)
-═══════════════════════════════ */
-@media (max-width: 768px) {
-  .hero {
-    padding: 100px 24px 60px;
-    align-items: flex-start;
-    min-height: 100vh;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
-
-  .hero-content {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .hero-log {
-    font-size: 0.5rem;
-    letter-spacing: 4px;
-    margin-bottom: 16px;
-  }
-
-  .hero-name {
-    font-size: clamp(3rem, 16vw, 4.5rem);
-    margin-bottom: 16px;
-    line-height: 0.92;
-  }
-
-  .hero-role {
-    font-size: 0.6rem;
-    letter-spacing: 3px;
-    margin-bottom: 16px;
-  }
-
-  .hero-quote {
-    font-size: 0.88rem;
-    margin-bottom: 28px;
-    max-width: 100%;
-  }
-
-  /* Ship — move to top right, small, out of the way */
-  .ship-wrap {
-    position: absolute;
-    top: 80px;
-    right: 20px;
-    bottom: auto;
-    z-index: 1;
-  }
-
-  .ship {
-    font-size: 2.2rem;
-  }
-
-  .ship-reflection {
-    display: none;
-  }
-
-  /* Stats — stack vertically */
-  .hero-stats {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-    padding: 16px 0;
-    margin-bottom: 28px;
-  }
-
-  .stat-line {
-    display: none;
-  }
-
-  .stat-val {
-    font-size: 0.75rem;
-  }
-
-  /* Buttons — full width stacked */
-  .hero-btns {
-    flex-direction: column;
-    width: 100%;
-    gap: 16px;
-  }
-
-  .hero-btns .btn {
-    width: 100%;
-    text-align: center;
-    padding: 16px;
-  }
-
-  /* Intro lines */
-  .intro-lines {
-    padding: 0 24px;
-    gap: 20px;
-  }
-
-  .line-quote {
-    font-size: 0.9rem;
-  }
-
-  .line-welcome {
-    font-size: 1.6rem;
-    letter-spacing: 4px;
-  }
-
-  .line-soft {
-    font-size: 0.85rem;
-  }
-
-  /* Scroll hint */
-  .scroll-hint {
-    bottom: 20px;
-  }
-
-  /* Compass */
-  .compass-btn {
-    bottom: 20px;
-    right: 20px;
-    width: 48px;
-    height: 48px;
-  }
-
-  .island-map {
-    right: 20px;
-    bottom: 84px;
-    min-width: 190px;
-  }
-
-  .compass-needle {
-    font-size: 1.2rem;
-  }
-}
-
+   ═══════════════════════════════ */
 @media (max-width: 480px) {
-  .hero {
-    padding: 90px 20px 50px;
-  }
 
-  .hero-name {
-    font-size: clamp(2.8rem, 18vw, 4rem);
-  }
-
-  .ship {
-    font-size: 2rem;
-  }
-
-  .ship-wrap {
-    top: 72px;
-    right: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  /* About */
-  .about {
-    padding: 80px 24px;
-  }
-
-  .logbook {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-
-  .logbook-cover {
-    max-width: 180px;
-    margin: 0 auto;
-  }
-
-  .wanted-mini {
-    margin: 0 auto;
-  }
-
-  /* Skills */
-  .skills {
-    padding: 80px 24px;
-  }
-
-  .islands-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .island-card {
-    height: 240px;
-  }
-
-  /* Projects */
-  .projects {
-    padding: 80px 24px;
-  }
-
-  .arcs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Quote banner */
-  .quote-banner {
-    padding: 40px 24px;
-    grid-template-columns: 1fr;
-  }
-
-  .quote-line {
-    display: none;
-  }
-
-  .quote-text {
-    font-size: 0.95rem;
-  }
-
-  /* Contact */
+  .hero,
+  .about,
+  .skills,
+  .projects,
   .contact {
-    padding: 80px 24px;
+    padding: 60px 20px;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-
-  /* Section titles */
   .section-title {
-    font-size: 2rem;
-    margin-bottom: 28px;
-  }
-
-  .section-label {
-    font-size: 0.55rem;
+    font-size: 2.2rem;
   }
 }

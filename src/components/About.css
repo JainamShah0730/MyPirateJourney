@@ -135,3 +135,34 @@
     font-size: 1.3rem;
     color: var(--red);
 }
+
+@media (max-width: 768px) {
+    .logbook {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .cover-title {
+        font-size: 1.8rem;
+        font-weight: 900;
+        margin-bottom: 32px;
+    }
+
+
+    .logbook-cover {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    .wanted-mini {
+        margin: 0 auto;
+    }
+
+    .log-entry {
+        padding-left: 16px;
+    }
+
+    .log-entry p {
+        font-size: 1.05rem;
+    }
+}

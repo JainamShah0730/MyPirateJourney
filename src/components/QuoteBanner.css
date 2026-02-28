@@ -46,3 +46,22 @@
     color: var(--muted);
     margin-top: 16px;
 }
+
+@media (max-width: 768px) {
+    .quote-banner {
+        padding: 40px 24px;
+        grid-template-columns: 1fr;
+    }
+
+    .quote-line {
+        display: none;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+    }
+
+    .quote-mark {
+        font-size: 3.5rem;
+    }
+}

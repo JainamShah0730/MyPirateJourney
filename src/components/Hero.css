@@ -109,6 +109,7 @@
     max-width: 680px;
     z-index: 2;
     pointer-events: none;
+    margin: 0 auto;
 }
 
 .hero-content.active {
@@ -124,16 +125,18 @@
     color: var(--gold);
     opacity: 0.65;
     margin-bottom: 28px;
+    text-align: center;
 }
 
 .hero-name {
     font-family: var(--font-display);
-    font-size: clamp(4rem, 10vw, 6rem);
+    font-size: clamp(3.5rem, 10vw, 6rem);
     font-weight: 900;
     line-height: 0.88;
     color: var(--cream);
     margin-bottom: 28px;
     text-shadow: 0 0 80px rgba(212, 164, 55, 0.1);
+    text-align: center;
 }
 
 .hero-name span {
@@ -147,6 +150,7 @@
     text-transform: uppercase;
     color: var(--muted);
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .hero-quote {
@@ -157,23 +161,29 @@
     max-width: 480px;
     line-height: 1.8;
     margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 /* ── STATS ── */
 .hero-stats {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 28px;
     padding: 20px 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
 .hero-stat {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    align-items: center;
 }
 
 .stat-label {
@@ -202,12 +212,46 @@
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 120px 24px 60px;
+        align-items: flex-start;
+    }
+
+    .ship-wrap {
+        top: 80px;
+        right: 20px;
+        bottom: auto;
+        transform: scale(0.7);
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .stat-line {
+        display: none;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-btns .btn1 {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* ── SCROLL HINT ── */
 .scroll-hint {
     position: absolute;
-    bottom: 36px;
+    bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -216,12 +260,12 @@
     gap: 8px;
     opacity: 0;
     transition: opacity 1.2s ease 0.5s;
-    z-index: 2;
+    z-index: 4;
     pointer-events: none;
 }
 
 .scroll-hint.visible {
-    opacity: 0.45;
+    opacity: 0.65;
 }
 
 .scroll-hint span {
