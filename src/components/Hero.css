@@ -1,0 +1,255 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10vw;
+    overflow: hidden;
+}
+
+/* ── SHIP ── */
+.ship-wrap {
+    position: absolute;
+    right: 12vw;
+    bottom: 24vh;
+    z-index: 2;
+    animation: shipBob 5s ease-in-out infinite;
+}
+
+.ship {
+    font-size: 5rem;
+    filter: drop-shadow(0 8px 24px rgba(212, 164, 55, 0.25));
+}
+
+@keyframes shipBob {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateY(-14px) rotate(1deg);
+    }
+}
+
+/* ── INTRO SCREEN ── */
+.intro-screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: opacity 1.5s ease, transform 1.5s ease;
+    pointer-events: none;
+}
+
+.intro-screen.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.intro-screen.exit {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+.intro-lines {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    text-align: center;
+    max-width: 640px;
+}
+
+.cinema-line {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 1.4s ease, transform 1.4s ease;
+}
+
+.cinema-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.line-quote {
+    font-family: var(--font-log);
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+
+.line-welcome {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--cream);
+    letter-spacing: 8px;
+}
+
+.line-soft {
+    font-family: var(--font-log);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.8;
+}
+
+/* ── MAIN CONTENT ── */
+.hero-content {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 1.4s ease, transform 1.4s ease;
+    max-width: 680px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-content.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.hero-log {
+    font-family: var(--font-jp);
+    font-size: 0.7rem;
+    letter-spacing: 6px;
+    color: var(--gold);
+    opacity: 0.65;
+    margin-bottom: 28px;
+}
+
+.hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 6rem);
+    font-weight: 900;
+    line-height: 0.88;
+    color: var(--cream);
+    margin-bottom: 28px;
+    text-shadow: 0 0 80px rgba(212, 164, 55, 0.1);
+}
+
+.hero-name span {
+    color: var(--gold);
+}
+
+.hero-role {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.hero-quote {
+    font-family: var(--font-log);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: rgba(212, 164, 55, 0.7);
+    max-width: 480px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* ── STATS ── */
+.hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-label {
+    font-family: var(--font-display);
+    font-size: 0.55rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.stat-val {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.stat-line {
+    width: 1px;
+    height: 36px;
+    background: var(--border);
+}
+
+/* ── BUTTONS ── */
+.hero-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ── SCROLL HINT ── */
+.scroll-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 1.2s ease 0.5s;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.scroll-hint.visible {
+    opacity: 0.45;
+}
+
+.scroll-hint span {
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 5px;
+    color: var(--gold);
+}
+
+.scroll-arrow {
+    width: 14px;
+    height: 14px;
+    border-right: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    transform: rotate(45deg);
+    animation: arrowBob 2s ease-in-out infinite;
+}
+
+@keyframes arrowBob {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translate(0, 0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: rotate(45deg) translate(3px, 3px);
+        opacity: 1;
+    }
+}

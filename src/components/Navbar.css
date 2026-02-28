@@ -1,0 +1,169 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 60px;
+    background: linear-gradient(180deg, rgba(4, 13, 26, 0.95) 0%, transparent 100%);
+}
+
+.nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+/* ── COMPASS ── */
+.compass-btn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 56px;
+    height: 56px;
+    z-index: 200;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compass-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    opacity: 0.5;
+    animation: compassSpin 8s linear infinite;
+}
+
+.compass-ring::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    border: 1px dashed rgba(212, 164, 55, 0.3);
+}
+
+@keyframes compassSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.compass-needle {
+    font-size: 1.4rem;
+    color: var(--gold);
+    transition: transform 0.4s;
+}
+
+.compass-btn.open .compass-needle {
+    transform: rotate(45deg);
+}
+
+.compass-btn:hover .compass-ring {
+    opacity: 1;
+}
+
+/* ── ISLAND MAP ── */
+.island-map {
+    position: fixed;
+    bottom: 110px;
+    right: 40px;
+    z-index: 199;
+    background: rgba(4, 13, 26, 0.96);
+    border: 1px solid var(--border);
+    padding: 28px;
+    min-width: 220px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+}
+
+.island-map.open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+}
+
+.map-title {
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    opacity: 0.6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.map-islands {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.map-island {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 14px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.map-island:hover {
+    border-color: var(--border);
+    background: rgba(212, 164, 55, 0.05);
+}
+
+.island-symbol {
+    font-size: 1.1rem;
+}
+
+.island-label {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cream);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 16px 20px;
+        background: rgba(4, 13, 26, 0.98);
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-logo {
+        font-size: 0.75rem;
+    }
+}

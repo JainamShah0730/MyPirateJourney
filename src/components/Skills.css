@@ -1,0 +1,121 @@
+.skills {
+    padding: 140px 10vw;
+    border-top: 1px solid var(--border);
+}
+
+.skills-sub {
+    font-family: var(--font-log);
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin-bottom: 56px;
+    margin-top: -32px;
+}
+
+.islands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.island-card {
+    position: relative;
+    height: 280px;
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.island-front,
+.island-back {
+    position: absolute;
+    inset: 0;
+    padding: 36px 28px;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+}
+
+.island-front {
+    background: linear-gradient(135deg, var(--ocean-light), var(--ocean-mid));
+}
+
+.island-back {
+    background: linear-gradient(135deg, rgba(212, 164, 55, 0.15), var(--ocean-light));
+    border-color: rgba(212, 164, 55, 0.4);
+    transform: rotateY(180deg);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.island-card:hover .island-front {
+    transform: rotateY(-180deg);
+}
+
+.island-card:hover .island-back {
+    transform: rotateY(0deg);
+}
+
+.island-tag {
+    font-family: var(--font-display);
+    font-size: 0.55rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 16px;
+}
+
+.island-emoji {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.island-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 12px;
+}
+
+.island-story {
+    font-family: var(--font-log);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.island-badge {
+    font-family: var(--font-display);
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    color: var(--orange);
+    margin-top: 12px;
+}
+
+.back-title {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+.back-tools {
+    font-family: var(--font-log);
+    font-size: 1.1rem;
+    color: var(--cream);
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.back-symbol {
+    font-size: 2rem;
+    margin-top: 20px;
+}

@@ -1,0 +1,134 @@
+.projects {
+    padding: 140px 10vw;
+    border-top: 1px solid var(--border);
+}
+
+.arcs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.arc-card {
+    background: linear-gradient(135deg, var(--ocean-light), var(--ocean-mid));
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.arc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(212, 164, 55, 0.05);
+    border-color: rgba(212, 164, 55, 0.35);
+}
+
+.arc-header {
+    padding: 28px 28px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arc-emoji {
+    font-size: 2.5rem;
+}
+
+.arc-status {
+    font-family: var(--font-display);
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid;
+}
+
+.arc-status.claimed {
+    color: var(--gold);
+    border-color: rgba(212, 164, 55, 0.3);
+}
+
+.arc-status.sailing {
+    color: var(--orange);
+    border-color: rgba(232, 112, 42, 0.3);
+}
+
+.arc-body {
+    padding: 20px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.arc-label {
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+.arc-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 14px;
+}
+
+.arc-story {
+    font-family: var(--font-log);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold);
+    opacity: 0.8;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.arc-desc {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.arc-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.arc-tag {
+    font-family: var(--font-display);
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+}
+
+.arc-links {
+    display: flex;
+    gap: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.proj-link {
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.proj-link:hover {
+    opacity: 0.6;
+}

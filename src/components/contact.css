@@ -1,0 +1,114 @@
+.contact {
+    padding: 140px 10vw;
+    border-top: 1px solid var(--border);
+}
+
+.contact-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact .section-label {
+    justify-content: center;
+}
+
+.contact-sub {
+    font-family: var(--font-log);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--gold);
+    line-height: 1.8;
+    margin-top: -24px;
+    margin-bottom: 48px;
+    opacity: 0.85;
+}
+
+.contact-form {
+    text-align: left;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--cream);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 12px 0;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: none;
+}
+
+.form-group textarea {
+    min-height: 120px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--muted);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-bottom-color: var(--gold);
+}
+
+.contact-form .btn {
+    margin-top: 8px;
+}
+
+.final-quote {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.final-quote p {
+    font-family: var(--font-log);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--muted);
+}
+
+.sail-again {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    transition: opacity 0.3s;
+}
+
+.sail-again:hover {
+    opacity: 0.6;
+}

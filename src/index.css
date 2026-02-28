@@ -1,0 +1,620 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Raleway:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;700&family=IM+Fell+English:ital@0;1&display=swap');
+
+:root {
+  --ocean-deep: #040d1a;
+  --ocean-mid: #060f22;
+  --ocean-light: #0a1a35;
+  --gold: #FFCC33;
+  --gold-bright: #FFDB58;
+  --orange: #e8702a;
+  --red: #c0181c;
+  --cream: #f5ede0;
+  --muted: rgba(245, 237, 224, 0.45);
+  --border: rgba(212, 164, 55, 0.15);
+  --parchment: #f2e4cc;
+  --ink: #1a1208;
+
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Raleway', sans-serif;
+  --font-log: 'IM Fell English', serif;
+  --font-jp: 'Noto Serif JP', serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ocean-deep);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ocean-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+}
+
+/* ── SHARED ── */
+.section-label {
+  font-family: var(--font-jp);
+  font-size: 0.75rem;
+  letter-spacing: 6px;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before,
+.section-label::after {
+  content: '';
+  height: 1px;
+  width: 30px;
+  background: var(--gold);
+  opacity: 0.4;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  color: var(--cream);
+  line-height: 1.05;
+  margin-bottom: 48px;
+}
+
+.section-title span {
+  color: var(--gold);
+}
+
+/* ── SCROLL REVEAL ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up.delay-1 {
+  transition-delay: 0.1s;
+}
+
+.fade-up.delay-2 {
+  transition-delay: 0.2s;
+}
+
+.fade-up.delay-3 {
+  transition-delay: 0.3s;
+}
+
+.fade-up.delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  padding: 18px 48px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn1 {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  padding: 15px 25px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--ocean-deep);
+}
+
+.btn-primary:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(212, 164, 55, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.btn-secondary:hover {
+  background: rgba(212, 164, 55, 0.1);
+  transform: translateY(-2px);
+}
+
+nav,
+section,
+.quote-banner {
+  position: relative;
+  z-index: 2;
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — TABLET (max 1024px)
+═══════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 0 6vw;
+  }
+
+  .hero-name {
+    font-size: clamp(3.5rem, 9vw, 7rem);
+  }
+
+  .ship-wrap {
+    right: 4vw;
+    bottom: 20vh;
+  }
+
+  .ship {
+    font-size: 4rem;
+  }
+
+  .about {
+    padding: 100px 6vw;
+  }
+
+  .logbook {
+    grid-template-columns: 180px 1fr;
+    gap: 48px;
+  }
+
+  .skills {
+    padding: 100px 6vw;
+  }
+
+  .projects {
+    padding: 100px 6vw;
+  }
+
+  .contact {
+    padding: 100px 6vw;
+  }
+
+  .islands-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .arcs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navbar {
+    padding: 20px 40px;
+  }
+
+  .nav-links {
+    gap: 28px;
+  }
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — MOBILE (max 768px)
+═══════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── NAVBAR ── */
+  .navbar {
+    padding: 18px 24px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* hidden on mobile — use compass instead */
+
+  /* ── HERO ── */
+  .hero {
+    padding: 0 6vw;
+    align-items: flex-start;
+    padding-top: 120px;
+  }
+
+  .hero-name {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  .hero-role {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+  }
+
+  .hero-quote {
+    font-size: 0.9rem;
+  }
+
+  .ship-wrap {
+    right: 6vw;
+    bottom: 30vh;
+  }
+
+  .ship {
+    font-size: 3rem;
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .stat-line {
+    display: none;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-btns .btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  .intro-lines {
+    padding: 0 6vw;
+    gap: 24px;
+  }
+
+  .line-welcome {
+    font-size: clamp(1.4rem, 7vw, 2.2rem);
+    letter-spacing: 4px;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: 80px 6vw;
+  }
+
+  .logbook {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .logbook-cover {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .wanted-mini {
+    margin: 0 auto;
+  }
+
+  /* ── SKILLS ── */
+  .skills {
+    padding: 80px 6vw;
+  }
+
+  .islands-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .island-card {
+    height: 240px;
+  }
+
+  /* ── PROJECTS ── */
+  .projects {
+    padding: 80px 6vw;
+  }
+
+  .arcs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── QUOTE BANNER ── */
+  .quote-banner {
+    padding: 48px 6vw;
+  }
+
+  .quote-text {
+    font-size: 1rem;
+  }
+
+  .quote-line {
+    display: none;
+  }
+
+  /* ── CONTACT ── */
+  .contact {
+    padding: 80px 6vw;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  /* ── COMPASS ── */
+  .compass-btn {
+    bottom: 24px;
+    right: 24px;
+  }
+
+  .island-map {
+    right: 24px;
+    bottom: 96px;
+    min-width: 200px;
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 32px;
+  }
+}
+
+/* ═══════════════════════════════
+   RESPONSIVE — SMALL (max 480px)
+═══════════════════════════════ */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 24px 60px;
+    align-items: flex-start;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-log {
+    font-size: 0.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 16px;
+  }
+
+  .hero-name {
+    font-size: clamp(3rem, 16vw, 4.5rem);
+    margin-bottom: 16px;
+    line-height: 0.92;
+  }
+
+  .hero-role {
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    margin-bottom: 16px;
+  }
+
+  .hero-quote {
+    font-size: 0.88rem;
+    margin-bottom: 28px;
+    max-width: 100%;
+  }
+
+  /* Ship — move to top right, small, out of the way */
+  .ship-wrap {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    bottom: auto;
+    z-index: 1;
+  }
+
+  .ship {
+    font-size: 2.2rem;
+  }
+
+  .ship-reflection {
+    display: none;
+  }
+
+  /* Stats — stack vertically */
+  .hero-stats {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+    margin-bottom: 28px;
+  }
+
+  .stat-line {
+    display: none;
+  }
+
+  .stat-val {
+    font-size: 0.75rem;
+  }
+
+  /* Buttons — full width stacked */
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .hero-btns .btn {
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+  }
+
+  /* Intro lines */
+  .intro-lines {
+    padding: 0 24px;
+    gap: 20px;
+  }
+
+  .line-quote {
+    font-size: 0.9rem;
+  }
+
+  .line-welcome {
+    font-size: 1.6rem;
+    letter-spacing: 4px;
+  }
+
+  .line-soft {
+    font-size: 0.85rem;
+  }
+
+  /* Scroll hint */
+  .scroll-hint {
+    bottom: 20px;
+  }
+
+  /* Compass */
+  .compass-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .island-map {
+    right: 20px;
+    bottom: 84px;
+    min-width: 190px;
+  }
+
+  .compass-needle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 90px 20px 50px;
+  }
+
+  .hero-name {
+    font-size: clamp(2.8rem, 18vw, 4rem);
+  }
+
+  .ship {
+    font-size: 2rem;
+  }
+
+  .ship-wrap {
+    top: 72px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  /* About */
+  .about {
+    padding: 80px 24px;
+  }
+
+  .logbook {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .logbook-cover {
+    max-width: 180px;
+    margin: 0 auto;
+  }
+
+  .wanted-mini {
+    margin: 0 auto;
+  }
+
+  /* Skills */
+  .skills {
+    padding: 80px 24px;
+  }
+
+  .islands-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .island-card {
+    height: 240px;
+  }
+
+  /* Projects */
+  .projects {
+    padding: 80px 24px;
+  }
+
+  .arcs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Quote banner */
+  .quote-banner {
+    padding: 40px 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .quote-line {
+    display: none;
+  }
+
+  .quote-text {
+    font-size: 0.95rem;
+  }
+
+  /* Contact */
+  .contact {
+    padding: 80px 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 28px;
+  }
+
+  .section-label {
+    font-size: 0.55rem;
+  }
+}

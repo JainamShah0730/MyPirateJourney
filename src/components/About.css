@@ -1,0 +1,137 @@
+.about {
+    padding: 140px 10vw;
+    border-top: 1px solid var(--border);
+}
+
+.logbook {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.logbook-cover {
+    background: linear-gradient(135deg, #1a1208, #2a1e0a);
+    border: 1px solid rgba(212, 164, 55, 0.3);
+    padding: 48px 28px;
+    text-align: center;
+    box-shadow: 6px 6px 40px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(212, 164, 55, 0.04);
+    transform: rotate(-1deg);
+    transition: transform 0.4s;
+}
+
+.logbook-cover:hover {
+    transform: rotate(0deg);
+}
+
+.cover-label {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    letter-spacing: 8px;
+    color: var(--gold);
+    opacity: 0.6;
+    margin-bottom: 8px;
+}
+
+.cover-title {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 32px;
+}
+
+.cover-symbol {
+    font-size: 2.5rem;
+    opacity: 0.6;
+}
+
+.logbook-pages {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.log-entry {
+    padding-left: 24px;
+    border-left: 2px solid rgba(212, 164, 55, 0.2);
+    transition: border-color 0.4s;
+}
+
+.log-entry:hover {
+    border-left-color: var(--gold);
+}
+
+.log-date {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    opacity: 0.8;
+}
+
+.log-entry p {
+    font-family: var(--font-log);
+    font-size: 1.15rem;
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+.log-entry p em {
+    color: var(--gold);
+    font-style: normal;
+}
+
+/* ── WANTED MINI ── */
+.wanted-mini {
+    background: #f2e4cc;
+    color: var(--ink);
+    padding: 20px;
+    text-align: center;
+    width: 160px;
+    transform: rotate(2deg);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+}
+
+.wanted-mini:hover {
+    transform: rotate(0deg);
+}
+
+.w-header {
+    font-family: var(--font-display);
+    font-size: 0.6rem;
+    letter-spacing: 6px;
+    font-weight: 900;
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+    padding: 4px 0;
+    margin-bottom: 10px;
+}
+
+.w-emoji {
+    font-size: 3rem;
+    margin-bottom: 8px;
+}
+
+.w-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 900;
+}
+
+.w-title {
+    font-size: 0.7rem;
+    color: #555;
+    font-style: italic;
+    margin: 4px 0;
+}
+
+.w-bounty {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--red);
+}
